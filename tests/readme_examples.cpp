@@ -71,6 +71,8 @@ void parser_parse_padded_string() {
   cout << parser.parse(json) << endl;
 }
 
+SIMDJSON_PUSH_DISABLE_WARNINGS
+SIMDJSON_DISABLE_DEPRECATED_WARNING
 void parser_parse_get_corpus() {
   cout << __func__ << endl;
 
@@ -78,6 +80,7 @@ void parser_parse_get_corpus() {
   dom::parser parser;
   cout << parser.parse(json) << endl;
 }
+SIMDJSON_POP_DISABLE_WARNINGS
 
 void parser_parse_exception() {
   cout << __func__ << endl;

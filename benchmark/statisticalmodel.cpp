@@ -161,7 +161,7 @@ int main(int argc, char *argv[]) {
 #ifdef __linux__
   simdjson::dom::parser parser;
   const simdjson::implementation &stage_parser = *simdjson::active_implementation;
-  bool allocok = parser.allocate_capacity(p.size());
+  bool allocok = parser.set_capacity(p.size());
   if (!allocok) {
     std::cerr << "failed to allocate memory" << std::endl;
     return EXIT_FAILURE;

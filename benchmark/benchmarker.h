@@ -294,7 +294,7 @@ struct benchmarker {
     // Allocate dom::parser
     collector.start();
     dom::parser parser;
-    bool alloc_ok = parser.allocate_capacity(json.size());
+    bool alloc_ok = parser.set_capacity(json.size());
     event_count allocate_count = collector.end();
     allocate_stage << allocate_count;
     // Run it once to get hot buffers
